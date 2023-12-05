@@ -9,11 +9,12 @@ public class App {
         l.empilha(4);
         l.empilha(5);
         l.escreve();
-        l.desempilha();
-        l.desempilha();
-        l.desempilha();
-        l.desempilha();
         System.out.println("DEPOIS DE DESEMPILHAR:");
-        l.escreve();
+        int indice = 0;
+        l.desempilha();
+        System.out.println("índice: "+indice+" = ["+l.get(indice)+"]"  );
+        l.desempilha();
+        System.out.println("índice: "+indice+" = ["+l.get(indice)+"]"  );
+        // l.escreve();
     }
 }

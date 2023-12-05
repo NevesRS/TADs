@@ -34,6 +34,19 @@ public class LinkedList {
         }
     }
 
+    public int get(int index) {
+        Node aux = head;
+        for (int i = 0; i <= count; i++) {
+            if (aux != null) {
+                if (i == index) {
+                    return aux.element;
+                }
+                aux = aux.next;
+            }
+        }
+        return -1;
+    }
+
     public void escreve() {
         Node aux = head;
         for (int i = 0; i <= count; i++) {
