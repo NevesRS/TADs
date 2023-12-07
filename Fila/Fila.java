@@ -23,19 +23,6 @@ public class Fila {
         count++;
     }
 
-    public int get(int index) {
-        Node aux = head;
-        for (int i = 0; i <= count; i++) {
-            if (aux != null) {
-                if (i == index) {
-                    return aux.element;
-                }
-                aux = aux.next;
-            }
-        }
-        return -1;
-    }
-
     public void remove() {
         if (count > 1) {
             Node aux = head;
@@ -48,6 +35,19 @@ public class Fila {
             System.out.println("Não há mais itens a serem excluidos!");
         }
 
+    }
+
+    public int get(int index) {
+        Node aux = head;
+        for (int i = 0; i <= count; i++) {
+            if (aux != null) {
+                if (i == index) {
+                    return aux.element;
+                }
+                aux = aux.next;
+            }
+        }
+        return -1;
     }
 
     public void escreve() {
