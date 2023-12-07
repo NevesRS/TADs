@@ -1,8 +1,8 @@
-package LinkedList;
+package Pilha;
 
 public class App {
     public static void main(String[] args) {
-        LinkedList l = new LinkedList();
+        Pilha l = new Pilha();
         l.empilha(1);
         l.empilha(2);
         l.empilha(3);

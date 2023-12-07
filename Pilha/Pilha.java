@@ -1,33 +1,33 @@
-package LinkedList;
+package Pilha;
 
 /**
- * Implementação de pilha utilizando LinkedList
+ * Implementação de pilha
  */
-public class LinkedList {
+public class Pilha {
 
     public Node head;
     public int count;
 
-    public LinkedList() {
+    public Pilha() {
         head = new Node(0);
-        count = 1;
+        count = 0;
     }
 
     public void empilha(int e) {
-        Node aux = new Node(e);
-        if (count == 1) {
-            head = aux;
+        Node newNode = new Node(e);
+        if (count == 0) {
+            head = newNode;
         } else {
-            aux.next = head;
-            head = aux;
+            newNode.next = head;
+            head = newNode;
         }
         count++;
     }
 
     public void desempilha() {
         if (count > 1) {
-            Node aux = head.next;
-            head = aux;
+            Node newNode = head.next;
+            head = newNode;
             count--;
         } else {
             System.out.println("Não há mais itens a serem desempilhados!");
