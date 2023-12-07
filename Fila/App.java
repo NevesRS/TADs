@@ -8,7 +8,7 @@ public class App {
         f.add(1); 
         f.add(2); 
         f.escreve();
-        f.remove();
+        f.remove(); 
         System.out.println("Removido 1: ");
         f.escreve();
         f.remove();
