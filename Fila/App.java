@@ -14,5 +14,6 @@ public class App {
         f.remove();
         System.out.println("Removido 2: ");
         f.escreve();
+        f.remove();
     }
 }

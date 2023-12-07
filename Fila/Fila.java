@@ -37,21 +37,18 @@ public class Fila {
     }
 
     public void remove() {
-        if (head == null) {
-            return;
-        }
-        if (count == 1) {
-            head = null;
-        } else {
+        if (count > 1) {
             Node aux = head;
             for (int i = 0; i < count - 2; i++) {
                 aux = aux.next;
             }
             aux.next = null;
+            count--;
+        }else{
+            System.out.println("Não há mais itens a serem excluidos!");
         }
-        count--;
+
     }
-    
 
     public void escreve() {
         Node aux = head;
