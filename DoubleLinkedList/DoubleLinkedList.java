@@ -17,9 +17,9 @@ public class DoubleLinkedList {
             header.next = newNode;
             trailer.prev = newNode;
         } else {
-            newNode.prev = trailer.prev;
-            newNode.next = trailer.prev.next;
             trailer.prev.next = newNode;
+            newNode.prev = trailer.prev;
+            newNode.next = trailer;
             trailer.prev = newNode;
         }
         count++;
@@ -28,28 +28,31 @@ public class DoubleLinkedList {
     public void remove(int index) {
         if (index == 0) {
             header.next = header.next.next;
-        } else if (index == count) {
-            trailer.prev = trailer.prev.prev;
+            header.next.prev = header;
+        } else if (index == count - 1) {
+            System.out.println(trailer.prev.element);
+            System.out.println(trailer.prev.prev.element);
         } else {
-            if (index >= count / 2) {
+            if (index >= count / 2) {// começa pelo trailer
                 Node aux = trailer.prev;
-                for (int i = count; i >= count / 2; i--) {
-                    if (i == index) {
-                        aux.next = aux.next.next;
-                        aux.prev = aux.prev.prev;
+                for (int i = 0; i < count - index; i++) {
+                    if (i == (count - index) - 1) {
+                        aux.prev.next = aux.next;
+                        aux.next.prev = aux.prev;
                     }
                     aux = aux.prev;
                 }
             } else {
                 Node aux = header.next;
-                for (int i = 0; i <= count / 2; i++) {
+                for (int i = 0; i < count / 2; i++) {
                     if (i == index) {
-                        aux.next.prev = aux.prev;
                         aux.prev.next = aux.next;
+                        aux.next.prev = aux.prev;
                     }
                     aux = aux.next;
                 }
             }
+
         }
         count--;
     }
