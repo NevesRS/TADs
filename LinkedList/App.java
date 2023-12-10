@@ -16,7 +16,10 @@ public class App {
         l2.escreve();
 
         System.out.println("UNINDO: ");
-        l2.mergeLists(l1);
-        l2.escreve();
+        l1.mergeLists(l2);
+        l1.escreve();
+
+        System.out.println("Para array: ");
+        l1.escreveArray(l1.toArray());
     }
 }

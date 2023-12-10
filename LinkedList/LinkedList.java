@@ -65,4 +65,20 @@ public class LinkedList {
         tail = listInsert.tail;
         count += listInsert.count;
     }
+
+    public int[] toArray() {
+        Node aux = head;
+        int[] v = new int[count];
+        for (int i = 0; i < count - 1; i++) {
+            aux = aux.next;
+            v[i] = aux.element;
+        }
+        return v;
+    }
+
+    public void escreveArray(int[] v) {
+        for (int i = 0; i < v.length; i++) {
+            System.out.print("["+v[i]+"]");
+        }
+    }
 }
