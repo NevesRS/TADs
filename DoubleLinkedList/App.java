@@ -13,10 +13,13 @@ public class App {
         dl.add(6);
         dl.add(7);
 
-        dl.remove(0);
-        System.out.println("NEXT:");
+        System.out.println("ANTES:");
         dl.escreveNext();
-        System.out.println("PREV:");
-        dl.escrevePrev();
+
+        dl.inverte();
+
+        System.out.println("DEPOIS:");
+        dl.escreveNext();
+
     }
 }

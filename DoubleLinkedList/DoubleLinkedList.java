@@ -72,6 +72,19 @@ public class DoubleLinkedList {
         return -1;
     }
 
+    public void inverte() {
+        Node aux1 = header.next;
+        Node aux2 = trailer.prev;
+        Integer elem = null;
+        for (int i = 0; i < count / 2; i++) {
+            elem = aux2.element;
+            aux2.element = aux1.element;
+            aux1.element = elem;
+            aux1 = aux1.next;
+            aux2 = aux2.prev;
+        }
+    }
+
     public void escrevePrev() {
         Node aux = trailer.prev;
         for (int i = 0; i <= count; i++) {
