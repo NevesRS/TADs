@@ -88,7 +88,7 @@ public class DoubleLinkedList {
     public void escrevePrev() {
         Node aux = trailer.prev;
         for (int i = 0; i <= count; i++) {
-            if (aux != null) {
+            if (aux != null && aux != header) {
                 System.out.println(aux.element);
                 aux = aux.prev;
             }
@@ -98,10 +98,17 @@ public class DoubleLinkedList {
     public void escreveNext() {
         Node aux = header.next;
         for (int i = 0; i <= count; i++) {
-            if (aux != null) {
+            if (aux != null && aux != trailer) {
                 System.out.println(aux.element);
                 aux = aux.next;
             }
         }
+    }
+
+    public void mergeLists(DoubleLinkedList dList){
+        trailer.next = dList.header.next;
+        dList.header.next.prev = trailer;
+        trailer = dList.trailer;
+        count += dList.count;
     }
 }
